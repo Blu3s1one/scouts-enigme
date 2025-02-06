@@ -3,6 +3,7 @@ import OTP from "../components/Code";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { OtpContext } from "../providers/OtpProvider";
+import { Grid } from "@mui/system";
 
 export default function Home() {
   const onComplete = (otp: string) => {
@@ -14,22 +15,34 @@ export default function Home() {
   const navigate = useNavigate();
   const { otp, otpCompleted } = useContext(OtpContext);
   return (
-    <Stack flex={1} alignItems={"center"} gap={10} paddingTop={10}>
-      <Typography variant="h1">Localisation de PiHer</Typography>
-      <Typography variant="h2">Code secret</Typography>
+    <Grid alignItems={"center"} padding={5}>
+      <Grid
+        alignItems={"center"}
+        justifyContent={"space-around"}
+        paddingBottom={5}
+      >
+        <Typography variant="h2" textAlign={"center"}>
+          Localisation de PiHer
+        </Typography>
+        <Typography variant="h2" textAlign={"center"}>
+          Code secret
+        </Typography>
+      </Grid>
       <OTP onComplete={onComplete} length={4} />
-      <Stack sx={{ alignItems: "center", paddingX: 10 }}>
-        <Typography variant="body1">Bonjour Pieher</Typography>
-        <Typography variant="body2">
+      <Grid alignItems={"center"} paddingY={5}>
+        <Typography variant="body1" textAlign={"center"}>
+          Bonjour Pieher
+        </Typography>
+        <Typography variant="body2" textAlign={"center"}>
           Vous avez oublié votre code secret ? pas de soucis, vous pouvez le
           retrouver.
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" textAlign={"center"}>
           Mais pour ne pas qu'il tombe entre les mains de n'importe qui, il va
           falloir prouver que c'est bien vous.
         </Typography>
-      </Stack>
-      <Stack direction="row" gap={2}>
+      </Grid>
+      <Grid container direction="row" gap={2} justifyContent={"center"}>
         <Button
           variant="contained"
           color={!otp[0].length ? "primary" : "secondary"}
@@ -61,7 +74,7 @@ export default function Home() {
         >
           Epreuve 4
         </Button>
-      </Stack>
+      </Grid>
       <Modal open={otpCompleted}>
         <Stack
           flex={1}
@@ -87,6 +100,6 @@ export default function Home() {
           </Stack>
         </Stack>
       </Modal>
-    </Stack>
+    </Grid>
   );
 }

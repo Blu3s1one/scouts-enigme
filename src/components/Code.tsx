@@ -56,7 +56,7 @@ const OtpInput: React.FC<OtpInputProps> = ({ length = 4, onComplete }) => {
   };
 
   return (
-    <Stack style={{ height: "fit-content" }}>
+    <Stack style={{ alignItems: "center" }}>
       <Box display="flex" gap={2}>
         {otp.map((digit, index) => (
           <WhiteTextField
