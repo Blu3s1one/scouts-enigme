@@ -81,12 +81,12 @@ export default function Home() {
           alignItems={"center"}
           justifyContent={"center"}
           height={"100%"}
+          paddingX={5}
         >
-          <Stack
+          <Grid
             bgcolor={"black"}
-            padding={10}
+            padding={5}
             alignItems={"center"}
-            gap={2}
             sx={{
               borderRadius: 8,
               borderWidth: 1,
@@ -94,10 +94,16 @@ export default function Home() {
               borderStyle: "solid",
             }}
           >
-            <Typography variant="h1">Code secret récupéré</Typography>
-            <Typography variant="body2">coordonées de PiHer</Typography>
-            <Typography>48.901826, 1.941051</Typography>
-          </Stack>
+            <Stack gap={2}>
+              <Typography variant="h2" textAlign={"center"}>
+                Code secret récupéré
+              </Typography>
+              <Typography variant="body2" textAlign={"center"}>
+                coordonées de PiHer
+              </Typography>
+              <Typography textAlign={"center"}>48.901826, 1.941051</Typography>
+            </Stack>
+          </Grid>
         </Stack>
       </Modal>
     </Grid>

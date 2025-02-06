@@ -1,19 +1,25 @@
 import { Button, Stack, Typography } from "@mui/material";
+import { Grid } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 
 export default function Enigme() {
   const navigation = useNavigate();
+  const width = window.innerWidth;
   return (
-    <Stack gap={2} flex={1} alignItems={"center"} paddingTop={10}>
-      <Typography variant="h1">Epreuve 4</Typography>
-      <Typography variant="body1">
-        Miaou, miaou miaou miaou ! miaou miaou ?
-      </Typography>
+    <Grid alignItems={"center"} padding={5}>
+      <Grid paddingBottom={2}>
+        <Typography variant="h1" textAlign={"center"}>
+          Epreuve 4
+        </Typography>
+        <Typography variant="body1" textAlign={"center"}>
+          Miaou, miaou miaou miaou ! miaou miaou ?
+        </Typography>
+      </Grid>
+
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        width={300}
-        height={400}
+        width={width * 0.8}
         viewBox="0 0 1040.000000 1280.000000"
         preserveAspectRatio="xMidYMid meet"
       >
@@ -354,13 +360,15 @@ m535 -140 c16 0 16 -50 0 -104 -17 -58 -99 -138 -163 -159 -43 -14 -196 -40
         </g>
       </svg>
 
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => navigation("/")}
-      >
-        Retour
-      </Button>
-    </Stack>
+      <Stack paddingTop={2} alignItems={"center"}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigation("/")}
+        >
+          Retour
+        </Button>
+      </Stack>
+    </Grid>
   );
 }
