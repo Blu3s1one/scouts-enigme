@@ -1,6 +1,9 @@
 import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import image from "../assets/images/image.png";
+import banc from "../assets/images/banc_seine.jpg";
+import barriere from "../assets/images/barriere.jpg";
+import panneau from "../assets/images/panneau_securite.jpg";
+import sport from "../assets/images/sport.jpg";
 import { Grid, Stack } from "@mui/system";
 export default function Enigme3() {
   const navigation = useNavigate();
@@ -13,11 +16,17 @@ export default function Enigme3() {
         </Typography>
         <Typography variant="body2" textAlign={"center"}>
           Vous avez oublié votre code secret, mais vous devez vous souvenir de
-          où est cet endroit, non ?
+          où sont ces endroits, non ?
+        </Typography>
+        <Typography variant="body2" textAlign={"center"} fontSize={12}>
+          Vous trouverez plus ou moins plus le code.
         </Typography>
       </Grid>
 
-      <img src={image} alt="Indice" width={width * 0.8} />
+      <img src={banc} alt="Indice" width={width * 0.8} />
+      <img src={barriere} alt="Indice" width={width * 0.8} />
+      <img src={panneau} alt="Indice" width={width * 0.8} />
+      <img src={sport} alt="Indice" width={width * 0.8} />
       <Stack paddingTop={2} alignItems={"center"}>
         <Button
           variant="contained"
